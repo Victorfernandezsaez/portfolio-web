@@ -40,7 +40,7 @@ export default function Intro() {
                 initial={{ opacity: 0, y: 100 }}
                 animate={{ opacity: 1, y: 0 }}
             >
-                <span className="font-bold">Hello, I'm Victor.</span><br /> I'm a full-stack developer. I enjoy
+                <span className="font-bold">Hello, I&apos;m Victor.</span><br /> I&apos;m a full-stack developer. I enjoy
                 building <span className="italic">sites & apps</span>. <br />My focus is{" "}
                 <span className="underline">React (Next.js)</span>.
             </motion.h1>
