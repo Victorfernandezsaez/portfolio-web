@@ -7,7 +7,7 @@ import { projectsData } from '@/lib/data'
 
 type ProjectProps = (typeof projectsData)[number]
 
-function Project({ title, description, tags, imageUrl, }:
+function Project({ title, description, tags, imageUrl, navTo, }:
     ProjectProps) {
     const ref = useRef<HTMLDivElement>(null)
     const { scrollYProgress } = useScroll({
@@ -36,6 +36,15 @@ function Project({ title, description, tags, imageUrl, }:
                             <li className='bg-black/[0.7] px-3 py-1 text-[0.7rem] uppercase tracking-wider text-white rounded-full' key={index}>{tag}</li>
                         ))}
                     </ul>
+                    {navTo.map((url, index) => (
+                        <a key={index}
+                            href={url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className='inline-block bg-black/[0.7] mt-2 px-3 py-1 text-[0.7rem] uppercase tracking-wider text-white rounded-full text-center'>
+                            See Code {navTo.length > 1 ? index + 1 : ''}
+                        </a>
+                    ))}
                 </div>
                 <Image
                     src={imageUrl}
